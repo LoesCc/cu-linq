@@ -2,11 +2,10 @@
 
 void Main()
 {
-	var names = new[] { "Tom", "Dick", "Harry", "Mary", "Jay" }.AsQueryable();
+	string[] names = new[] { "Tom", "Dick", "Harry", "Mary", "Jay" };
 	
 	// extension mehods
-	var temp =
-		names
+	var temp = names
 		.Select( n => new TempProjectionItem
 			{
 				Original  = n,
@@ -17,12 +16,12 @@ void Main()
 
 	// query syntax
 	var temp2 =
-		from n in names select new TempProjectionItem
+		from n in names
+		select new TempProjectionItem
 		{
 			Original = n,
 			Vowelless = n.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o", "").Replace("u", "")
-		}
-		;
+		};
 	temp2.Dump();
 }
 
