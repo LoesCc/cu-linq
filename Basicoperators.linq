@@ -7,9 +7,9 @@ int[] numbers = { 10, 9, 8, 7, 6 };
 numbers.First().Dump ("First");
 numbers.Last().Dump ("Last");
 
-numbers.ElementAt (1).Dump ("Second number");
-numbers.OrderBy (n => n).First().Dump ("Lowest number");
-numbers.OrderBy (n => n).Skip(1).First().Dump ("Second lowest number");
+numbers.ElementAt(1).Dump ("Second number");
+numbers.OrderBy(n => n).First().Dump ("Lowest number");
+numbers.OrderBy(n => n).Skip(1).First().Dump ("Second lowest number");
 
 // Sequence operators:
 numbers.Take(3).Dump("Take(3) returns the first three numbers in the sequence");
