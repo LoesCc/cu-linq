@@ -1,14 +1,14 @@
 <Query Kind="Statements" />
 
-var names = new[] { "Tom", "Dick", "Harry", "Mary", "Jay" }.AsQueryable();
+string[] names = new[] { "Tom", "Dick", "Harry", "Mary", "Jay" };
 // Lambda Syntax - Extension methods
 var query = names
-			 .Select( n => new
-				 {
-					 Original = n,
-					 Vowelless = n.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o", "").Replace("u", "")
-				 }
-			  );
+	 .Select( n => new
+		 {
+			 Original = n,
+			 Vowelless = n.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o", "").Replace("u", "")
+		 }
+	  );
 query.Dump();
 
 
