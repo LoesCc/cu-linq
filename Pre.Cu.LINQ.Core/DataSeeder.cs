@@ -10,9 +10,11 @@ public class DataSeeder : ISeeder
     private readonly IEmployeeFactory _employeeFactory;
     private readonly IProductFactory _productFactory;
     private readonly IOrderFactory _orderFactory;
+    private readonly IPokemonFactory _pokemonFactory;
 
     public DataSeeder(LinqExerciseContext dbContext, ICategoryFactory categoryFactory, ICustomerFactory customerFactory,
-        IEmployeeFactory employeeFactory, IProductFactory productFactory, IOrderFactory orderFactory)
+        IEmployeeFactory employeeFactory, IProductFactory productFactory, IOrderFactory orderFactory,
+        IPokemonFactory pokemonFactory)
     {
         _dbContext = dbContext;
         _categoryFactory = categoryFactory;
@@ -20,6 +22,7 @@ public class DataSeeder : ISeeder
         _employeeFactory = employeeFactory;
         _productFactory = productFactory;
         _orderFactory = orderFactory;
+        _pokemonFactory = pokemonFactory;
     }
 
 
@@ -38,6 +41,9 @@ public class DataSeeder : ISeeder
         _orderFactory.CreateOrderLine(orders, _dbContext.Products.ToList());
         _dbContext.Orders.AddRange(orders);
         _dbContext.Employees.ToList().ForEach(e => e.Orders.AddRange(orders.FindAll(o => o.Employee.Id == e.Id)));
+        _dbContext.SaveChanges();
+
+        _dbContext.Pokemon.AddRange(_pokemonFactory.CreateDefaults());
         _dbContext.SaveChanges();
     }
 }

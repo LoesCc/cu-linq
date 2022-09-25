@@ -36,6 +36,9 @@ public class ExerciseRunner
             case Runner.ExerciseC:
                 exercises.Add(new ExerciseC(_dbContext));
                 break;
+            case Runner.ExerciseD:
+                exercises.Add(new ExerciseD(_dbContext));
+                break;
             case Runner.BasicOperators:
                 exercises.Add(new BasicOperators());
                 break;
@@ -68,7 +71,7 @@ public class ExerciseRunner
             case Runner.ALL:
                 exercises.Add(new ExerciseA());
                 exercises.Add(new ExerciseB());
-                exercises.Add(new ExerciseC(_dbContext));
+                exercises.Add(new ExerciseD(_dbContext));
                 exercises.Add(new BasicOperators());
                 exercises.Add(new DbGrouping(_dbContext));
                 exercises.Add(new DbProjection(_dbContext));
@@ -92,7 +95,7 @@ public enum Runner
     ALL,
     ExerciseA,
     ExerciseB,
-    ExerciseC,
+    ExerciseD,
     BasicOperators,
     DbGrouping,
     DbProjection,
@@ -101,5 +104,6 @@ public enum Runner
     Introduction,
     Expression,
     Projection,
-    SubQueries
+    SubQueries,
+    ExerciseC
 }

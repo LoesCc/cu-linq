@@ -17,6 +17,7 @@ using IHost host = Host.CreateDefaultBuilder(args)
         services.AddTransient<ICustomerFactory, CustomerFactory>();
         services.AddTransient<IEmployeeFactory, EmployeeFactory>();
         services.AddTransient<IOrderFactory, OrderFactory>();
+        services.AddTransient<IPokemonFactory, PokemonFactory>();
         services.AddTransient<ISeeder, DataSeeder>();
     })
     .Build();
@@ -25,4 +26,4 @@ host.Services.GetService<ISeeder>()!.Seed();
 
 var exercises = new ExerciseRunner(host.Services.GetService<LinqExerciseContext>());
 
-exercises.Run(Runner.Introduction);
+exercises.Run(Runner.ExerciseC);
