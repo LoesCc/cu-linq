@@ -15,5 +15,11 @@ public class ExerciseC : IExercise
 
     public void Run()
     {
+        // TODO 1. Geef alle Pokemon weer die niet tot generatie 1, 2 of 4 behoren en legendary zijn 
+
+        // TODO 2. Geef de Pokemon weer die behoren tot Gen II, behoren tot de category Fire, Psychic of Rock en hebben binnen hun categorie een attackbonus 
+        // die hoger ligt dan het gemiddelde.
+        // TODO 3. Geef de gemiddelde Hp, Attack en Defense weer voor de pokemon van Generation I per type
+        
     }
 }
