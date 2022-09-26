@@ -26,4 +26,4 @@ host.Services.GetService<ISeeder>()!.Seed();
 
 var exercises = new ExerciseRunner(host.Services.GetService<LinqExerciseContext>());
 
-exercises.Run(Runner.ExerciseC);
+exercises.Run(Runner.Introduction);
