@@ -6,18 +6,13 @@ public static class IListExtensions
     {
         TablePrinter printer = TablePrinter.Instance;
         var header = $"List<{typeof(T)}> ({data.Count()} items)";
-        data = data.ToList();
-        
-        if (!string.IsNullOrWhiteSpace(title))
-        {
-            printer.PrintTitle(title);
-        }
+        printer.Print(title, header, data.ToList());
 
-        printer.IsPrinting = true;
-        printer.PrintLine();
-        printer.PrintRow(header);
-        printer.PrintLine();
+        return data;
+    }
 
+    internal static List<T> PrintItems<T>(this List<T> data, TablePrinter printer)
+    {
         foreach (var item in data)
         {
             if (item.GetType().IsPrimitive)
@@ -30,9 +25,6 @@ public static class IListExtensions
             }
         }
 
-        printer.PrintLine();
-        printer.IsPrinting = false;
-        
         return data;
     }
 }

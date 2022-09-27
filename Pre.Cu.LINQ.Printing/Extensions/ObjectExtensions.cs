@@ -20,6 +20,7 @@ public static class ObjectExtensions
         printer.PrintLine();
         printer.PrintRow(header);
         printer.PrintLine();
+        
         if (data.GetType().IsPrimitive || data is string)
         {
             printer.PrintRow(data.ToString() ?? string.Empty);

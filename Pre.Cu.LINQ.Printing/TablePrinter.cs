@@ -77,4 +77,21 @@ public class TablePrinter
         Console.WriteLine($">> \x1b[1m{title}\x1b[0m");
         Console.ForegroundColor = tmpForegroundColor;
     }
+
+    public void Print<T>(string title, string header, List<T> data)
+    {
+        if (!string.IsNullOrWhiteSpace(title))
+        {
+            PrintTitle(title);
+        }
+
+        IsPrinting = true;
+        PrintLine();
+        PrintRow(header);
+        PrintLine();
+
+        data.ToList().PrintItems(this);
+        
+        IsPrinting = false;
+    }
 }
