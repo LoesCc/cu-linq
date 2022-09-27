@@ -4,7 +4,7 @@ namespace Pre.Cu.LINQ.Core.Factories;
 
 public class OrderFactory : IOrderFactory
 {
-    public List<Order> CreateDefaults(List<Employee> employees, List<Customer> customers)
+    public IEnumerable<Order> CreateDefaults(IEnumerable<Employee> employees, IEnumerable<Customer> customers)
     {
         return new List<Order>()
         {
@@ -112,8 +112,7 @@ public class OrderFactory : IOrderFactory
         };
     }
 
-
-    public List<OrderLine> CreateOrderLine(List<Order> orders, List<Product> products)
+    public IEnumerable<OrderLine> CreateOrderLine(IEnumerable<Order> orders, IEnumerable<Product> products)
     {
         var orderLines = new List<OrderLine>()
         {
@@ -181,12 +180,12 @@ public class OrderFactory : IOrderFactory
             new OrderLine(10271, products.SingleOrDefault(p => p.Id == 3), 2.00M, 24, 0M),
         };
 
-        orders.ForEach(o => { o.OrderDetails.AddRange(orderLines.Where(ol => ol.OrderId == o.Id)); });
+        orders.ToList().ForEach(o => { o.OrderDetails.AddRange(orderLines.Where(ol => ol.OrderId == o.Id)); });
 
         return orderLines;
     }
 
-    public List<Order> CreateDefaults()
+    public IEnumerable<Order> CreateDefaults()
     {
         throw new NotImplementedException();
     }

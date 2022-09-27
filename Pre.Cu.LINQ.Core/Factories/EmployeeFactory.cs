@@ -8,7 +8,7 @@ public class EmployeeFactory : IEmployeeFactory
     {
     }
 
-    public List<Employee> CreateDefaults()
+    public IEnumerable<Employee> CreateDefaults()
     {
         return new List<Employee>()
         {

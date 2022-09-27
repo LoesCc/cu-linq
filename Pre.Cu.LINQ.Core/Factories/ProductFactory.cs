@@ -8,7 +8,7 @@ public class ProductFactory : IProductFactory
     {
     }
 
-    public List<Product> CreateDefaults(List<Category?> categories)
+    public IEnumerable<Product> CreateDefaults(IEnumerable<Category?> categories)
     {
         return new List<Product>()
         {
@@ -47,7 +47,7 @@ public class ProductFactory : IProductFactory
         };
     }
 
-    public List<Product> CreateDefaults()
+    public IEnumerable<Product> CreateDefaults()
     {
         throw new NotImplementedException();
     }

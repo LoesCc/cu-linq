@@ -10,7 +10,7 @@ public class CustomerFactory : ICustomerFactory
     {
     }
 
-    public List<Customer> CreateDefaults()
+    public IEnumerable<Customer> CreateDefaults()
     {
         return new List<Customer>()
         {

@@ -12,7 +12,7 @@ public class CategoryFactory : ICategoryFactory
         _exerciseDbContext = exerciseDbContext;
     }
 
-    public List<Category> CreateDefaults()
+    public IEnumerable<Category> CreateDefaults()
     {
         return new List<Category>()
         {

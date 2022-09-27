@@ -32,15 +32,15 @@ public class DataSeeder : ISeeder
         _dbContext.SaveChanges();
         _dbContext.Customers.AddRange(_customerFactory.CreateDefaults());
         _dbContext.SaveChanges();
-        _dbContext.Products.AddRange(_productFactory.CreateDefaults(_dbContext.Categories.ToList()));
+        _dbContext.Products.AddRange(_productFactory.CreateDefaults(_dbContext.Categories));
         _dbContext.SaveChanges();
         _dbContext.Employees.AddRange(_employeeFactory.CreateDefaults());
         _dbContext.SaveChanges();
 
-        var orders = _orderFactory.CreateDefaults(_dbContext.Employees.ToList(), _dbContext.Customers.ToList());
-        _orderFactory.CreateOrderLine(orders, _dbContext.Products.ToList());
+        var orders = _orderFactory.CreateDefaults(_dbContext.Employees, _dbContext.Customers);
+        _orderFactory.CreateOrderLine(orders, _dbContext.Products);
         _dbContext.Orders.AddRange(orders);
-        _dbContext.Employees.ToList().ForEach(e => e.Orders.AddRange(orders.FindAll(o => o.Employee.Id == e.Id)));
+        _dbContext.Employees.ToList().ForEach(e => e.Orders.AddRange(orders.ToList().FindAll(o => o.Employee.Id == e.Id)));
         _dbContext.SaveChanges();
 
         _dbContext.Pokemon.AddRange(_pokemonFactory.CreateDefaults());
