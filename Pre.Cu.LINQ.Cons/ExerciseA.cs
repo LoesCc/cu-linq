@@ -9,7 +9,7 @@ public class ExerciseA : IExercise
     {
         List<int> numbers = new List<int> { 20, 35, 17, 105, 90 };
         // TODO 1. Getallen deelbaar door 5
-
+        
         // TODO 2. grootste getal
 
         // TODO 3. voorlaatste getal
