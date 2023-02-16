@@ -5,5 +5,5 @@ namespace Pre.Cu.LINQ.Core;
 
 public interface IProductFactory : IFactory<Product>
 {
-    IEnumerable<Product> CreateDefaults(IEnumerable<Category?> categories);
+    IEnumerable<Product> CreateDefaults(IEnumerable<Category> categories);
 }

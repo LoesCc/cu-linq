@@ -4,8 +4,6 @@ namespace Pre.Cu.LINQ.Core.Factories;
 
 public class CustomerFactory : ICustomerFactory
 {
-    private readonly LinqExerciseContext _dbContext;
-
     public CustomerFactory()
     {
     }

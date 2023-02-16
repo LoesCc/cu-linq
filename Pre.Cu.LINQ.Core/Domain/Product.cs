@@ -6,7 +6,7 @@ public class Product
     {
     }
 
-    public Product(int id, string name, int supplierId, Category? category, string quantityPerUnit, decimal unitPrice,
+    public Product(int id, string name, int supplierId, Category category, string quantityPerUnit, decimal unitPrice,
         int unitsInStock, int unitsOnOrder)
     {
         Id = id;
@@ -22,7 +22,7 @@ public class Product
     public int Id { get; set; }
     public string Name { get; set; }
     public int SupplierId { get; set; }
-    public Category? Category { get; set; }
+    public Category Category { get; set; }
     public string QuantityPerUnit { get; set; }
     public int UnitsInStock { get; set; }
     public int UnitsOnOrder { get; set; }

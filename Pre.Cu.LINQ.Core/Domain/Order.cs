@@ -27,7 +27,7 @@ public class Order
     public Customer Customer { get; }
     public Employee Employee { get; set; }
     public DateTime OrderedDate { get; set; }
-    public DateTime? ShippedDate { get; set; }
+    public DateTime ShippedDate { get; set; }
     public DateTime RequireDate { get; set; }
     public Address ShipTo { get; set; }
     public int ShipVia { get; set; }

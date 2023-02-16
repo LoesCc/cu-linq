@@ -8,7 +8,7 @@ public class ProductFactory : IProductFactory
     {
     }
 
-    public IEnumerable<Product> CreateDefaults(IEnumerable<Category?> categories)
+    public IEnumerable<Product> CreateDefaults(IEnumerable<Category> categories)
     {
         return new List<Product>()
         {

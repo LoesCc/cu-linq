@@ -2,7 +2,7 @@ namespace Pre.Cu.LINQ.Printing;
 
 public static class IListExtensions
 {
-    public static List<T> Dump<T>(this List<T> data, string? title = null)
+    public static List<T> Dump<T>(this List<T> data, string title = null)
     {
         TablePrinter printer = TablePrinter.Instance;
         var header = $"List<{typeof(T)}> ({data.Count()} items)";

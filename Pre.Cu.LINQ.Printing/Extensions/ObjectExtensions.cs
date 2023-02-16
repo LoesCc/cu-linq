@@ -2,7 +2,7 @@ namespace Pre.Cu.LINQ.Printing;
 
 public static class ObjectExtensions
 {
-    public static T Dump<T>(this T data, string? title = null)
+    public static T Dump<T>(this T data, string title = null)
     {
         TablePrinter printer = TablePrinter.Instance;
         if (!data.GetType().IsPrimitive && printer.IsPrinting)
