@@ -8,7 +8,7 @@ public class BasicOperators : IExercise
     public void Run()
     {
         int[] numbers = { 10, 9, 8, 7, 6 };
-
+        
         // Element operators:
         numbers.First().Dump("First");
         numbers.Last().Dump("Last");
