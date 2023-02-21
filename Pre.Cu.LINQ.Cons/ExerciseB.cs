@@ -22,12 +22,5 @@ public class ExerciseB : IExercise
         
         // TODO 3. Student met grootste code gevormd door id^2 + 5, toon ook de code
         
-        
-        
-    }
-
-    public int GenerateCode(Student s)
-    {
-        return s.Id * s.Id + 5;
     }
 }
