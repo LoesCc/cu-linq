@@ -8,7 +8,7 @@ public class Employee
     }
 
     public Employee(int id, string lastName, string firstName, string title, string titleOfCourtesy, DateTime birthday,
-        DateTime hireDate, Address address, string homePhone, string extension, string notes, string reportsTo) : this()
+        DateTime hireDate, Address address, string homePhone, string extension, string reportsTo, string notes) : this()
     {
         Id = id;
         LastName = lastName;
