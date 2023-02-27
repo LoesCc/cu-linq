@@ -17,9 +17,10 @@ public class ExerciseD : IExercise
     {
         /* TODO 1. Toon de productnamen waarvan we minder dan 20 UnitsInStock tellen, toon ook de bijbehorende categorienaam */
 
-        /* TODO 2. Toon de namen van de klanten waar in de ContactTitle het woord "sales" voorkomt en afkomstig zijn uit Sweden */
+        /* TODO 2. Toon de namen van de klanten waar in de ContactTitle het woord "sales" (hoofdletterongevoelig) voorkomt en die afkomstig zijn uit UK */
 
-        /* TODO 3. Toon de namen van de klanten waar in de ContactTitle het woord "sales" voorkomt en afkomstig zijn uit Italië, Frankrijk of Portugal*/
+        /* TODO 3. Toon de namen van de klanten waar in de ContactTitle het woord "sales" (hoofdletterongevoelig) voorkomt en die afkomstig zijn uit
+	     	   UK, Germany of Brazil*/
 
         /* TODO	4. Geef voor elke werknemer die een overste heeft (reportsto is ingevuld)
 	        de voornaam en familienaam weer alsook hoeveel orders ze hebben behandeld in het meest recente jaar */
