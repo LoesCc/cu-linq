@@ -24,7 +24,7 @@ public class Order
     }
 
     public int Id { get; set; }
-    public Customer Customer { get; }
+    public Customer Customer { get; set; }
     public Employee Employee { get; set; }
     public DateTime OrderedDate { get; set; }
     public DateTime ShippedDate { get; set; }
