@@ -39,16 +39,5 @@ public class Chaining : IExercise
             .Select(n => n.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o", "").Replace("u", ""))
             .OrderBy(n => n)
             .Dump("Mind the sequence!");
-
-        // using into --> composition
-
-        names.Select(n =>
-                n.Replace("a", "")
-                    .Replace("e", "")
-                    .Replace("i", "")
-                    .Replace("o", "")
-                    .Replace("u", ""))
-            .Where(noVowel => noVowel.Length > 2)
-            .OrderBy(noVowel => noVowel).Dump("The preceding query revisited, with the 'into' keyword");
     }
 }
