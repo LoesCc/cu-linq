@@ -11,7 +11,5 @@ public class Expression : IExercise
 
         var enumerableExample = (new[] { "Tom", "Dick", "Harry" }).Where(n => n.Length >= 4);
         Console.WriteLine(enumerableExample.GetType());
-
-        // (Notice that the language dropdown above is now 'C# Expression' rather than 'C# Statement').
     }
 }

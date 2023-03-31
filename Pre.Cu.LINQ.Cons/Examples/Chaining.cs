@@ -26,12 +26,10 @@ public class Chaining : IExercise
         finalQuery.Dump("FinalQuery");
 
         // stripping out the vowels
-        (
-                names
-                    .Select(n => n.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o", "").Replace("u", ""))
-                    .Where(n => n.Length > 2)
-                    .OrderBy(n => n)
-            )
+        names
+            .Select(n => n.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o", "").Replace("u", ""))
+            .Where(n => n.Length > 2)
+            .OrderBy(n => n)
             .Dump("Chaining in fluent syntax");
 
         // mind the sequence!
