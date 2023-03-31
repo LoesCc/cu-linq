@@ -21,7 +21,7 @@ public static class ObjectExtensions
         printer.PrintRow(header);
         printer.PrintLine();
         
-        if (data.GetType().IsPrimitive || data is string)
+        if (data.GetType().IsPrimitive || data is string || data is decimal)
         {
             printer.PrintRow(data.ToString() ?? string.Empty);
         }
