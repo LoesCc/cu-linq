@@ -15,14 +15,14 @@ public class DbGrouping : IExercise
 
     public void Run()
     {
-        // Group by - Automatic Dump
+        // Group by - Products by category
         _dbContext.Products
             .GroupBy(prod => prod.Category.Id)
             .Select(grouping => new { grouping.Key, Products = grouping.ToList() })
-            .Dump("Group by");
+            .Dump("Group by: products by category");
 
 
-        // Using the grouping Key
+        // Group by - Max product price per category
         _dbContext.Products
             .GroupBy(prod => prod.Category.Id)
             .Select(g => new
@@ -30,7 +30,7 @@ public class DbGrouping : IExercise
                 CategoryId = g.Key,
                 MaxPrice = g.Max(p => p.UnitPrice),
             })
-            .Dump("Using the grouping key");
+            .Dump("Group by: max price per category");
 
 
         // Grouping on multiple columns
