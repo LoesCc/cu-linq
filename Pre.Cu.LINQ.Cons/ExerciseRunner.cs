@@ -42,6 +42,9 @@ public class ExerciseRunner
             case Runner.BasicOperators:
                 exercises.Add(new BasicOperators());
                 break;
+            case Runner.Chaining:
+                exercises.Add(new Chaining());
+                break;
             case Runner.DbGrouping:
                 exercises.Add(new DbGrouping(_dbContext));
                 break;
@@ -98,6 +101,7 @@ public enum Runner
     ExerciseB,
     ExerciseD,
     BasicOperators,
+    Chaining,
     DbGrouping,
     DbProjection,
     Deferred,
