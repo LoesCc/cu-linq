@@ -18,8 +18,9 @@ public class DbQueries : IExercise
         // realy simple
         _dbContext.Categories.Dump("Categories");
 
-        // extension methods and lambda expressions
+        // Linq and lambda expressions
         _dbContext.Customers.Where(c => c.Id.StartsWith("A")).Dump("Customers starting with A");
+        _dbContext.Products.Where(p => p.Category.Name == "Beverages").Dump("Beverages");
 
         // using variables
         string customerId = "Alfki";
@@ -31,9 +32,5 @@ public class DbQueries : IExercise
         _dbContext.Products
             .Where(p => p.Category.Id == categoryID).Dump($"Products of Catogry {categoryID}")
             .Sum(p => p.UnitPrice).Dump($"Total Price for products of Catogry {categoryID}");
-
-        // with DataContext variable, easier to copy/paste to Visual Studio
-
-        _dbContext.Products.Where(p => p.Category.Name == "Beverages").Dump();
     }
 }
