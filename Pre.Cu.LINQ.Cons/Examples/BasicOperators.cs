@@ -43,7 +43,7 @@ public class BasicOperators : IExercise
         //dot product of sequence
         s1.Zip(s2, (a, b) => a * b).Dump("Dot Product");
 
-        // Zip() a,d sum
+        // Zip() and sum
         int[] values = { 1, 2, 3 };
         int[] weights = { 3, 2, 8 };
         values.Zip(weights, (value, weight) => value * weight) //same as a dot product
