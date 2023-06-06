@@ -6,12 +6,6 @@ namespace Pre.Cu.LINQ.Cons.Examples;
 
 public class Projection3 : IExercise
 {
-    private readonly LinqExerciseContext _dbContext;
-
-    public Projection3(LinqExerciseContext dbContext)
-    {
-        _dbContext = dbContext;
-    }
 
     public void Run()
     {

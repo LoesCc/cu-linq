@@ -69,7 +69,7 @@ public class ExerciseRunner
             case Runner.Projection:
                 exercises.Add(new Projection1());
                 exercises.Add(new Projection2());
-                exercises.Add(new Projection3(_dbContext));
+                exercises.Add(new Projection3());
                 break;
             case Runner.SubQueries:
                 exercises.Add(new SubQueries());
@@ -88,7 +88,7 @@ public class ExerciseRunner
                 exercises.Add(new Introduction());
                 exercises.Add(new Projection1());
                 exercises.Add(new Projection2());
-                exercises.Add(new Projection3(_dbContext));
+                exercises.Add(new Projection3());
                 exercises.Add(new SubQueries());
                 break;
         }
