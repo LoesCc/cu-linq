@@ -5,12 +5,12 @@ public static class ObjectExtensions
     public static T Dump<T>(this T data, string title = null)
     {
         TablePrinter printer = TablePrinter.Instance;
-        if (!data.GetType().IsPrimitive && printer.IsPrinting)
+        if (data != null && !data.GetType().IsPrimitive && printer.IsPrinting)
         {
             printer.Indent = 5;
         }
 
-        var header = $"{data.GetType()}";
+        var header = $"{data?.GetType()}";
 
         if (!string.IsNullOrWhiteSpace(title))
         {
@@ -20,8 +20,12 @@ public static class ObjectExtensions
         printer.PrintLine();
         printer.PrintRow(header);
         printer.PrintLine();
-        
-        if (data.GetType().IsPrimitive || data is string || data is decimal)
+
+        if (data == null)
+        {
+            printer.PrintRow("null");
+        }
+        else if (data.GetType().IsPrimitive || data is string || data is decimal)
         {
             printer.PrintRow(data.ToString() ?? string.Empty);
         }
@@ -31,7 +35,7 @@ public static class ObjectExtensions
         }
 
         printer.PrintLine();
-        if (!data.GetType().IsPrimitive)
+        if (data != null && !data.GetType().IsPrimitive)
         {
             printer.ResetMargin();
         }
