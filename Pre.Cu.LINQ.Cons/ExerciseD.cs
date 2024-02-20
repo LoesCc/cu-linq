@@ -26,6 +26,6 @@ public class ExerciseD : IExercise
 	        de voornaam en familienaam weer alsook hoeveel orders ze hebben behandeld in het meest recente jaar */
 
         /*  TODO 5. Toon de eerste letter en het aantal ProductNames dat met deze letter begint.
-            We zien enkel de letters waarvoor er meer dan 2 producten zijn. */
+            We zien enkel de letters waarvoor er minstens 2 producten zijn. */
     }
 }
