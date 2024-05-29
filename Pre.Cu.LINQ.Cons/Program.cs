@@ -26,5 +26,5 @@ host.Services.GetService<ISeeder>()!.Seed();
 
 var exercises = new ExerciseRunner(host.Services.GetService<LinqExerciseContext>());
 
-exercises.Run(Runner.ExerciseB);
+exercises.Run(Runner.ExerciseC);
 //exercises.Run(Runner.ExerciseA);

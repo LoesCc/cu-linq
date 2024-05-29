@@ -17,18 +17,18 @@ public class ExerciseB : IExercise
             new Student { Id = 4, FirstName = "Suzy", LastName = "Wan", Age = 20, Sex = "F" }
         };
 
-        // TODO 1. Studenten waarbij voor en familienaam start met dezelfde letter
+        // 1. Studenten waarbij voor en familienaam start met dezelfde letter
         IEnumerable<Student> sameFirstLetters = students
             .Where(s => s.FirstName.First() == s.LastName.First())
             .Dump("Eerste zelfde letters.");
 
-        // TODO 2. Gemiddelde leeftijd van de vrouwelijke studenten
+        // 2. Gemiddelde leeftijd van de vrouwelijke studenten
         double meanAge = students
             .Where(s => s.Sex == "F")
             .Average(f => f.Age)
             .Dump("Gemiddelde leeftijd.");
 
-        // TODO 3. Student met grootste code gevormd door id^2 + 5, toon ook de code
+        // 3. Student met grootste code gevormd door id^2 + 5, toon ook de code
         var studentBiggestCode = students
             .Select(s => new { s.Id, s.FirstName, Code = Math.Pow(s.Id, 2) + 5 })
             .MaxBy(n => n.Code)
