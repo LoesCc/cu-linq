@@ -16,11 +16,16 @@ public class ExerciseB : IExercise
             new Student { Id = 4, FirstName = "Suzy", LastName = "Wan", Age = 20, Sex = "F" }
         };
 
-        // TODO 1. Studenten waarbij voor en familienaam start met dezelfde letter
+        students.Dump("Alle studenten");
 
-        // TODO 2. Gemiddelde leeftijd van de vrouwelijke studenten
-        
-        // TODO 3. Student met grootste code gevormd door id^2 + 5, toon ook de code
+        // Studenten waarbij voor en familienaam start met dezelfde letter
+        IEnumerable<Student> sameFirstLetter = students.Where(s => s.FirstName.First() == s.LastName.First()).Dump("Zelfde eerste letter");
+
+        // Gemiddelde leeftijd van de vrouwelijke studenten
+        double meanAgeWomen = students.Where(s => s.Sex == "F").Average(s => s.Age).Dump("Gemiddelde leeftijd vrouwelijke studenten");
+
+        // Student met grootste code gevormd door id^2 + 5, toon ook de code
+        var specialCode = students.Select(s => new { Student = $"{s.FirstName} {s.LastName}", SpecialCode = Math.Pow(s.Id, 2) + 5 }).MaxBy(n => n.SpecialCode).Dump("Speciale code");
         
     }
 }
